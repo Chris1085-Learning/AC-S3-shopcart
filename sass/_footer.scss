@@ -1,0 +1,8 @@
+footer {
+  transition: 0.5s;
+
+  @include theme() {
+    color: theme-get('text-color');
+    background-color: theme-get('bg-color');
+  }
+}

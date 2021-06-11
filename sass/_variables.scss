@@ -1,18 +1,19 @@
 /* basic setting */
-$body-bg: #f8f7fc;
-$body-color: #18253d;
-$white: #fff;
-$main-blue: #001935;
-$secondary-blue: #3c88fd;
-$freedom-blue: #02b8ff;
-$dark-gray: #4a4a4a;
-$light-gray: #a7aaaf;
+$lightMode-background-color: #e5e5e5;
+$lightMode-text-color: #999999;
+$darkMode-bg-darkgray: #333333;
+$darkMode-bg-black: #121212;
+$darkMode-body-color: #ffffff66;
+$darkMode-footer-color: #ffffff99;
+$priamry-btn-color: #f67599;
+
 $sizes: (
   25: 25%,
   50: 50%,
   75: 75%,
   100: 100%
 );
+
 $pc-media: 960px;
 $pcs-media: 959px;
 $pad-media: 760px;

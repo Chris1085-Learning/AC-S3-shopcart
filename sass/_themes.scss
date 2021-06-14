@@ -1,11 +1,15 @@
 $themes: (
   darkTheme: (
     'text-color': white,
-    'bg-color': #424242
+    'footer-bg-color': #424242,
+    'header-bg-color': black,
+    'border-color': white,
+    'hover-color': rgb(24, 24, 24)
   ),
   lightTheme: (
     'text-color': black,
-    'bg-color': #f5f5f5
+    'footer-bg-color': #f5f5f5,
+    'header-bg-color': white
   )
 );
 

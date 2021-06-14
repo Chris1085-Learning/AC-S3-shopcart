@@ -2,6 +2,10 @@ header {
   padding-top: 18px;
   padding-bottom: 18px;
   position: relative;
+
+  @include theme() {
+    background-color: theme-get('header-bg-color');
+  }
 }
 
 .menu__item {
@@ -10,14 +14,41 @@ header {
   opacity: 1;
   background-color: #fff;
 
-  a {
+  .menu__item__link {
     display: block;
+    @include theme() {
+      color: theme-get('text-color');
+    }
+  }
+
+  @include theme() {
+    background-color: theme-get('header-bg-color');
+  }
+}
+
+.userIcon {
+  @include theme() {
+    background-color: theme-get('header-bg-color');
   }
 }
 
 .userIcon__item {
   padding-left: 33px;
   background-color: #fff;
+  width: 100%;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  @include theme() {
+    background-color: theme-get('header-bg-color');
+    color: theme-get('text-color');
+  }
+
+  .userIcon__item__link {
+    @include theme() {
+      color: theme-get('text-color');
+    }
+  }
 }
 
 .logoContainer {
@@ -31,6 +62,10 @@ header {
   .logo {
     .logo__img {
       margin-right: 10px;
+    }
+
+    @include theme() {
+      color: theme-get('text-color');
     }
   }
 }
@@ -53,7 +88,6 @@ header {
     position: absolute;
     top: 100%;
     left: 0;
-    margin-top: 16px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -74,6 +108,9 @@ header {
 
       &:hover {
         background-color: #dddddd;
+        @include theme() {
+          background-color: theme-get('hover-color');
+        }
       }
     }
 
@@ -86,17 +123,17 @@ header {
     display: none;
     position: absolute;
     top: 100%;
-    margin-top: 388px;
+    left: 0;
+    width: 100%;
+    margin-top: 335px;
 
     .userIcon__item {
       padding-left: 0px;
       width: 130px;
       text-align: center;
+      padding-top: 24px;
+      padding-bottom: 24px;
     }
-  }
-
-  .material-icons-outlined {
-    font-size: 30px;
   }
 
   .hamburger__toggle,
@@ -105,6 +142,10 @@ header {
     display: block;
     cursor: pointer;
     border-bottom: 3px solid #2a2a2a;
+
+    @include theme() {
+      border-color: theme-get('border-color');
+    }
   }
 
   .hamburger__toggle {
@@ -153,7 +194,6 @@ header {
     position: absolute;
     top: 100%;
     left: 0;
-    margin-top: 16px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -174,6 +214,10 @@ header {
 
       &:hover {
         background-color: #dddddd;
+
+        @include theme() {
+          background-color: theme-get('hover-color');
+        }
       }
     }
 
@@ -193,10 +237,6 @@ header {
       width: 130px;
       text-align: center;
     }
-  }
-
-  .material-icons-outlined {
-    font-size: 30px;
   }
 
   .hamburger__toggle,

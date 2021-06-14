@@ -5,14 +5,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ALPHA Shop</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <div class="sidebar__menu__link">
-      <label class="sidebar__darkmode__label" for="dark__mode__toggle"></label>
-      <input type="checkbox" class="sidebar__darkmode__input" id="dark__mode__toggle" />
-    </div>
-    <footer></footer>
+    <header>
+      <div class="container d-flex justify-content-between align-items-center">
+        <label class="hamburger__toggle" for="hamburger__toggle"></label>
+        <input class="hamburger__checkbox" type="checkbox" name="" id="hamburger__toggle" />
+
+        <ul class="menu d-flex w-100">
+          <li class="menu__item"><a class="menu__item__link" href="#">男款</a></li>
+          <li class="menu__item"><a class="menu__item__link" href="#">女款</a></li>
+          <li class="menu__item"><a class="menu__item__link" href="#">最新消息</a></li>
+          <li class="menu__item"><a class="menu__item__link" href="#">客製商品</a></li>
+          <li class="menu__item"><a class="menu__item__link" href="#">聯絡我們</a></li>
+        </ul>
+        <div class="logoContainer h-100">
+          <a class="logo d-flex align-items-center h-100" href=""
+            ><img class="logo__img" src="./images/Icon.png" alt="" srcset="" />ALPHA Shop</a
+          >
+        </div>
+        <ul class="d-flex userIcon justify-content-center w-100">
+          <li class="userIcon__item">
+            <a class="userIcon__item__link" href="#"><i class="material-icons-outlined"> search </i></a>
+          </li>
+          <li class="userIcon__item">
+            <a class="userIcon__item__link" href="#"><i class="material-icons-outlined"> shopping_cart </i></a>
+          </li>
+          <li class="userIcon__item">
+            <a class="userIcon__item__link" href="#" id="darkModeToggle"
+              ><i class="material-icons-outlined"> dark_mode </i></a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+    <footer>
+      <div class="container">
+        <a class="footer__logo d-flex align-items-center" href=""
+          ><img class="logo__img" src="./images/Icon.png" alt="" srcset="" />ALPHA Shop</a
+        >
+
+        <div class="footer__details d-flex justify-content-between">
+          <div class="footer__custmer">
+            <h4 class="footer__details__subtitle">客戶服務</h4>
+            <ul class="footer__list">
+              <li class="footer__list__item"><a href="#">運送說明</a></li>
+              <li class="footer__list__item"><a href="#">退換貨相關</a></li>
+              <li class="footer__list__item"><a href="#">付款資訊</a></li>
+              <li class="footer__list__item"><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer__about">
+            <h4 class="footer__details__subtitle">關於我們</h4>
+            <ul class="footer__list">
+              <li class="footer__list__item"><a href="#">品牌故事</a></li>
+              <li class="footer__list__item"><a href="#">媒體聯繫</a></li>
+              <li class="footer__list__item"><a href="#">Press kit</a></li>
+            </ul>
+          </div>
+          <div class="footer__info">
+            <h4 class="footer__details__subtitle">資訊</h4>
+            <ul class="footer__list">
+              <li class="footer__list__item"><a href="#">隱私權政策</a></li>
+              <li class="footer__list__item"><a href="#">Cookie</a></li>
+              <li class="footer__list__item"><a href="#">GDPR</a></li>
+              <li class="footer__list__item"><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer__follow">
+            <h4 class="footer__details__subtitle">追蹤 ALPHA Shop</h4>
+            <ul class="footer__list">
+              <li class="footer__list__item">+886 02123-45678</li>
+              <li class="footer__list__item">
+                <a class="social__icon" href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a class="social__icon" href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a class="social__icon" href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="./js/all.js"></script>
   </body>

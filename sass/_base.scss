@@ -61,6 +61,7 @@ $spacers: (
 html {
   font-size: 16px;
   height: 100%;
+  font-family: 'Noto Sans TC';
 }
 body {
   height: 100%;
@@ -137,5 +138,46 @@ body {
     .#{$abbrev}-#{$num} {
       #{$prop}: $val;
     }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+@include pc {
+  .container {
+    padding-right: 165px;
+    padding-left: 165px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@include pad-lg {
+  .container {
+    padding-left: 17px;
+    padding-right: 17px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@include pad {
+  .container {
+    padding-left: 17px;
+    padding-right: 17px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@include mobile {
+  .container {
+    padding-left: 17px;
+    padding-right: 17px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }

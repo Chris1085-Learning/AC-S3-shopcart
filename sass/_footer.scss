@@ -1,8 +1,56 @@
 footer {
   transition: 0.5s;
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+  }
 
   @include theme() {
     color: theme-get('text-color');
     background-color: theme-get('bg-color');
   }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.footer__logo {
+  grid-column: 1 / 4;
+  font-weight: bold;
+  font-size: 18px;
+
+  .logo__img {
+    margin-right: 10px;
+  }
+}
+.footer__details {
+  grid-column: 4 / 13;
+}
+
+.footer__list {
+  margin-top: 24px;
+
+  .footer__list__item {
+    margin-bottom: 8px;
+    color: gray;
+    a {
+      color: gray;
+    }
+  }
+}
+
+.footer__details__subtitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2a2a2a;
+}
+
+.social__icon {
+  margin-right: 20px;
+  font-size: 24px;
 }

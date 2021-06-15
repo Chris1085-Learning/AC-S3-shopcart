@@ -867,8 +867,8 @@ a {
 }
 
 header {
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   position: relative;
 }
 
@@ -972,9 +972,14 @@ header {
   position: absolute;
 }
 
+.open {
+  margin-bottom: 399px;
+}
+
 @media all and (min-width: 376px) and (max-width: 1319px) {
   header {
-    height: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   .menu {
     position: absolute;
@@ -1085,7 +1090,8 @@ header {
 
 @media all and (max-width: 375px) {
   header {
-    height: 20px;
+    padding-top: 18px;
+    padding-bottom: 18px;
   }
   .menu {
     position: absolute;
@@ -1133,12 +1139,16 @@ header {
     display: none;
     position: absolute;
     top: 100%;
-    margin-top: 388px;
+    left: 0;
+    width: 100%;
+    margin-top: 335px;
   }
   .userIcon .userIcon__item {
     padding-left: 0px;
     width: 130px;
     text-align: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
   .hamburger__toggle,
   .hamburger__toggle::before,
@@ -1146,6 +1156,11 @@ header {
     display: block;
     cursor: pointer;
     border-bottom: 3px solid #2a2a2a;
+  }
+  .darkTheme .hamburger__toggle, .darkTheme
+  .hamburger__toggle::before, .darkTheme
+  .hamburger__toggle::after {
+    border-color: white;
   }
   .hamburger__toggle {
     position: relative;
@@ -1182,6 +1197,9 @@ header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  footer {
+    display: none;
   }
 }
 

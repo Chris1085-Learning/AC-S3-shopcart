@@ -10,3 +10,10 @@ const darkModeToggleHandler = (event) => {
 }
 // bind the event
 darkModeToggle.addEventListener('click', darkModeToggleHandler)
+
+// toggle menu will add 'open' class that adding margin-bottom in header
+const header = document.getElementById('header')
+const menuToggle = document.getElementById('hamburger__toggle')
+menuToggle.addEventListener('click', () => {
+  header.classList.toggle('open')
+})

@@ -1,6 +1,6 @@
 header {
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   position: relative;
 
   @include theme() {
@@ -79,9 +79,14 @@ header {
   position: absolute;
 }
 
+.open {
+  margin-bottom: 399px;
+}
+
 @include pad {
   header {
-    height: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
   .menu {
@@ -187,7 +192,8 @@ header {
 
 @include mobile {
   header {
-    height: 20px;
+    padding-top: 18px;
+    padding-bottom: 18px;
   }
 
   .menu {
@@ -214,7 +220,6 @@ header {
 
       &:hover {
         background-color: #dddddd;
-
         @include theme() {
           background-color: theme-get('hover-color');
         }
@@ -230,12 +235,16 @@ header {
     display: none;
     position: absolute;
     top: 100%;
-    margin-top: 388px;
+    left: 0;
+    width: 100%;
+    margin-top: 335px;
 
     .userIcon__item {
       padding-left: 0px;
       width: 130px;
       text-align: center;
+      padding-top: 24px;
+      padding-bottom: 24px;
     }
   }
 
@@ -245,6 +254,10 @@ header {
     display: block;
     cursor: pointer;
     border-bottom: 3px solid #2a2a2a;
+
+    @include theme() {
+      border-color: theme-get('border-color');
+    }
   }
 
   .hamburger__toggle {
@@ -281,5 +294,9 @@ header {
 
   .hamburger__checkbox:checked ~ .userIcon {
     display: flex;
+  }
+
+  footer {
+    display: none;
   }
 }

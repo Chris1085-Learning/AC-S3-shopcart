@@ -23,3 +23,11 @@
     @content;
   }
 }
+
+@mixin getStepNums($num) {
+  @for $i from 1 through $num {
+    &:nth-child(#{$i}) .circle__container::after {
+      content: '#{$i}';
+    }
+  }
+}

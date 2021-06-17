@@ -1,0 +1,114 @@
+.stepperPanel {
+  margin-bottom: 64px;
+
+  @include pad {
+    margin-bottom: 24px;
+  }
+
+  @include mobile {
+    margin-bottom: 24px;
+  }
+}
+
+.step {
+  flex: 1;
+  position: relative;
+  .circle__container {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    // background-color: #333333;
+    border: 1px solid #333333;
+    position: relative;
+    margin-right: 6px;
+
+    &::after {
+      position: absolute;
+      top: 3px;
+      left: 7px;
+      color: black;
+    }
+  }
+  @include getStepNums(3);
+
+  &.checked {
+    .circle__container {
+      &::after {
+        content: '\2714';
+      }
+    }
+  }
+
+  &.checked,
+  &.active {
+    .circle__container {
+      background-color: #333333;
+
+      &::after {
+        color: white;
+      }
+    }
+  }
+
+  .connectLine {
+    position: absolute;
+    display: block;
+    height: 2px;
+    // width: 50%;
+    width: 50%;
+    background-color: black;
+  }
+
+  &:nth-child(2) .connectLine {
+    right: 89%;
+  }
+
+  &:nth-child(3) .connectLine {
+    right: 60%;
+    // left: calc(50% + 32px);
+  }
+
+  @include pad {
+    .label__container {
+      display: none;
+    }
+
+    .circle__container {
+      margin-right: 0;
+    }
+
+    .connectLine {
+      width: 80%;
+    }
+
+    &:nth-child(2) .connectLine {
+      right: calc(50% + 44px);
+    }
+
+    &:nth-child(3) .connectLine {
+      left: calc(-50% + 44px);
+    }
+  }
+
+  @include mobile {
+    .label__container {
+      display: none;
+    }
+
+    .connectLine {
+      width: 60px;
+    }
+
+    .circle__container {
+      margin: 0;
+    }
+
+    &:nth-child(2) .connectLine {
+      right: calc(50% + 44px);
+    }
+
+    &:nth-child(3) .connectLine {
+      left: calc(-50% + 44px);
+    }
+  }
+}

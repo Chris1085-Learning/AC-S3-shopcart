@@ -1421,8 +1421,18 @@ footer .container {
 }
 
 .btn-container {
+  margin-top: 24px;
   border-top: 1px solid #e6e6eb;
   padding-top: 24px;
+}
+
+@media all and (min-width: 376px) and (max-width: 1319px) {
+  .btn-container {
+    position: absolute;
+    left: 16px;
+    bottom: 0px;
+    width: calc(100% - 32px);
+  }
 }
 
 .form-row {
@@ -1806,12 +1816,16 @@ select:invalid {
 @media all and (min-width: 376px) and (max-width: 1319px) {
   .content {
     margin-top: 16px;
+    margin-bottom: 100px;
+    position: relative;
   }
 }
 
 @media all and (max-width: 375px) {
   .content {
     margin-top: 16px;
+    margin-bottom: 144px;
+    position: relative;
   }
 }
 

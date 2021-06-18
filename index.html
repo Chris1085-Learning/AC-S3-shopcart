@@ -51,12 +51,12 @@
       <div class="container">
         <h2 class="content__title">結帳</h2>
         <div class="leftContent">
-          <ul class="stepperPanel d-flex">
-            <li class="step d-flex align-items-center text-center checked">
+          <ul class="stepperPanel d-flex" id="step-control">
+            <li class="step d-flex align-items-center text-center active">
               <div class="circle__container"></div>
               <div class="label__container d-flex align-items-center">寄送地址</div>
             </li>
-            <li class="step d-flex d-flex justify-content-center align-items-center text-center active">
+            <li class="step d-flex d-flex justify-content-center align-items-center text-center">
               <div class="circle__container"></div>
               <span class="connectLine"></span>
               <div class="label__container">運送方式</div>
@@ -68,7 +68,7 @@
             </li>
           </ul>
 
-          <form class="form-container">
+          <form class="form-container" id="checkout-form">
             <div class="part">
               <h2 class="content__title">寄送地址</h2>
               <div class="form-row">
@@ -113,7 +113,7 @@
                 </div>
               </div>
             </div>
-            <div class="part">
+            <div class="part d-none">
               <h2 class="content__title">運送方式</h2>
               <div class="form__transport d-flex justify-content-between">
                 <div class="form-check d-flex align-items-center btn-radio-container">
@@ -136,7 +136,7 @@
                 <span class="form__transport__cost" id="transport__DHL">$500</span>
               </div>
             </div>
-            <div class="part">
+            <div class="part d-none">
               <h2 class="content__title">付款資訊</h2>
               <div class="form-row">
                 <div class="form__credit__container d-flex flex-column">
@@ -178,12 +178,12 @@
               </div>
             </div>
           </form>
-          <div class="btn-container d-flex justify-content-between">
-            <button class="btn btn-secondary d-flex align-items-center" type="button">
-              <i class="mr-4 fal fa-long-arrow-left fa-lg"></i>上一步
+          <div class="btn-container d-flex justify-content-end" id="btn-control">
+            <button class="btn btn-secondary align-items-center d-none justify-content-start" type="button" id="preBtn">
+              上一步
             </button>
-            <button class="btn btn-primary d-flex align-items-center justify-content-center" type="submit">
-              下一步<i class="ml-4 fal fa-long-arrow-right fa-lg"></i>
+            <button class="btn btn-primary d-flex align-items-center justify-content-center" type="submit" id="nextBtn">
+              下一步
             </button>
           </div>
         </div>

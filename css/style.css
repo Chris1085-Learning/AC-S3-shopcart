@@ -1546,7 +1546,7 @@ footer .container {
 }
 
 .form__transport {
-  border: 1px solid #000;
+  border: 1px solid #808080;
   border-radius: 4px;
   margin-top: 24px;
   padding: 11px 20px;
@@ -1575,8 +1575,13 @@ footer .container {
   z-index: -1;
 }
 
+.border-focus {
+  border: 1px solid #000;
+}
+
 .btn {
-  width: 174px;
+  padding-left: 48px;
+  padding-right: 48px;
   height: 46px;
   border: 0px;
   border-radius: 8px;
@@ -1589,13 +1594,50 @@ footer .container {
   color: white;
 }
 
+.btn-primary::after {
+  content: '\2192';
+  margin-left: 10px;
+  color: var(--body-color);
+}
+
 .btn-primary:hover {
   background-color: #eb6188;
+}
+
+@media all and (min-width: 376px) and (max-width: 1319px) {
+  .btn-primary {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 375px) {
+  .btn-primary {
+    width: 100%;
+  }
 }
 
 .btn-secondary {
   background-color: white;
   color: black;
+  padding-left: 0px;
+}
+
+.btn-secondary::before {
+  content: '\2190';
+  margin-right: 10px;
+  color: var(--body-color);
+}
+
+@media all and (min-width: 376px) and (max-width: 1319px) {
+  .btn-secondary {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 375px) {
+  .btn-secondary {
+    width: 100%;
+  }
 }
 
 input[type='radio'] {

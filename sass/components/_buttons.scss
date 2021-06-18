@@ -1,5 +1,7 @@
 .btn {
-  width: 174px;
+  // width: 174px;
+  padding-left: 48px;
+  padding-right: 48px;
   height: 46px;
   border: 0px;
   border-radius: 8px;
@@ -10,15 +12,43 @@
 .btn-primary {
   background-color: #f67599;
   color: white;
+  &::after {
+    content: '\2192';
+    margin-left: 10px;
+    color: var(--body-color);
+  }
 
   &:hover {
     background-color: #eb6188;
+  }
+
+  @include pad {
+    width: 100%;
+  }
+
+  @include mobile {
+    width: 100%;
   }
 }
 
 .btn-secondary {
   background-color: white;
   color: black;
+  padding-left: 0px;
+
+  &::before {
+    content: '\2190';
+    margin-right: 10px;
+    color: var(--body-color);
+  }
+
+  @include pad {
+    width: 100%;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 input {

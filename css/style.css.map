@@ -4,17 +4,17 @@
     "sources": [
         "../sass/style.scss",
         "../sass/_reset.scss",
-        "../sass/_variables.scss",
-        "../sass/_mixins.scss",
+        "../sass/utilities/_variables.scss",
+        "../sass/utilities/_mixins.scss",
         "../sass/_themes.scss",
         "../sass/_base.scss",
-        "../sass/_header.scss",
-        "../sass/_footer.scss",
+        "../sass/layout/_header.scss",
+        "../sass/layout/_footer.scss",
         "../sass/components/_stepper.scss",
         "../sass/components/_termsPanel.scss",
         "../sass/components/_cart.scss",
         "../sass/components/_buttons.scss",
-        "../sass/_content.scss"
+        "../sass/layout/_content.scss"
     ],
     "names": [],
     "file": "style.css"

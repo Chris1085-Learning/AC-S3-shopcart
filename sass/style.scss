@@ -1,12 +1,12 @@
 @import 'reset';
-@import 'variables';
-@import 'mixins';
+@import './utilities/variables';
+@import './utilities/mixins';
 @import 'themes';
 @import 'base';
-@import 'header';
-@import 'footer';
+@import './layout/header';
+@import './layout/footer';
 @import './components/stepper';
 @import './components/termsPanel';
 @import './components/cart';
 @import './components/buttons';
-@import 'content';
+@import './layout/content';

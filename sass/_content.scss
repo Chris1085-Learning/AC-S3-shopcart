@@ -1,5 +1,6 @@
 .content {
   margin-top: 80px;
+  padding-bottom: 120px;
 
   .container {
     display: grid;
@@ -19,7 +20,7 @@
 .content__title {
   font-size: 32px;
   line-height: 38px;
-  margin-bottom: 48px;
+  // margin-bottom: 48px;
   grid-column: 1 / 13;
 
   @include pad {
@@ -33,6 +34,14 @@
 
 .leftContent {
   grid-column: 1 / 7;
+
+  @include pad {
+    grid-column: 1 / 13;
+  }
+
+  @include mobile {
+    grid-column: 1 / 13;
+  }
 }
 
 .rightContent {

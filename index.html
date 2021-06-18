@@ -51,12 +51,12 @@
       <div class="container">
         <h2 class="content__title">結帳</h2>
         <div class="leftContent">
-          <ul class="stepperPanel d-flex">
-            <li class="step d-flex align-items-center text-center checked">
+          <ul class="stepperPanel d-flex" id="step-control">
+            <li class="step d-flex align-items-center text-center active">
               <div class="circle__container"></div>
               <div class="label__container d-flex align-items-center">寄送地址</div>
             </li>
-            <li class="step d-flex d-flex justify-content-center align-items-center text-center active">
+            <li class="step d-flex d-flex justify-content-center align-items-center text-center">
               <div class="circle__container"></div>
               <span class="connectLine"></span>
               <div class="label__container">運送方式</div>
@@ -67,11 +67,131 @@
               <div class="label__container">付款資訊</div>
             </li>
           </ul>
+
+          <form class="form-container" id="checkout-form">
+            <div class="part">
+              <h2 class="content__title">寄送地址</h2>
+              <div class="form-row">
+                <div class="form__title__container d-flex flex-column">
+                  <label class="form__label" for="form__title__select">稱謂</label>
+                  <div class="select-wrapper">
+                    <select class="w-100" name="form__title__select" id="form__title__select">
+                      <option value="mr" selected>先生</option>
+                      <option value="ms">小姐</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form__name__container d-flex flex-column">
+                  <label class="form__label" for="form__name">姓名</label>
+                  <input type="text" name="form__name" id="form__name" placeholder="請輸入姓名" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form__phone__container d-flex flex-column">
+                  <label class="form__label" for="form__phone">電話</label>
+                  <input type="tel" name="form__phone" id="form__phone" placeholder="請輸入電話" required />
+                </div>
+                <div class="form__email__container d-flex flex-column">
+                  <label class="form__label" for="form__email">Email</label>
+                  <input type="email" name="form__email" id="form__email" placeholder="請輸入電子郵件" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form__city__container d-flex flex-column">
+                  <label class="form__label" for="form__city">縣市</label>
+                  <div class="select-wrapper">
+                    <select class="w-100" name="form__city" id="form__city" required>
+                      <option value="" selected disabled>請選擇縣市</option>
+                      <option value="台北市">台北市</option>
+                      <option value="新北市">新北市</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form__address__container d-flex flex-column">
+                  <label class="form__label" for="form__address">地址</label>
+                  <input type="text" name="form__address" id="form__address" placeholder="請輸入地址" required />
+                </div>
+              </div>
+            </div>
+            <div class="part d-none">
+              <h2 class="content__title">運送方式</h2>
+              <div class="form__transport d-flex justify-content-between">
+                <div class="form-check d-flex align-items-center btn-radio-container">
+                  <input class="btn-radio" type="radio" name="transposrtType" id="standardTransposrt" />
+                  <label class="form-check-label d-flex flex-column ml-3" for="standardTransposrt">
+                    <span class="mb-2">標準運送</span>
+                    <span>約3-7個工作天</span>
+                  </label>
+                </div>
+                <span class="form__transport__cost" id="transport__standard">免費</span>
+              </div>
+              <div class="form__transport d-flex justify-content-between">
+                <div class="form-check d-flex align-items-center btn-radio-container">
+                  <input class="btn-radio" type="radio" name="transposrtType" id="DHLTransposrt" />
+                  <label class="form-check-label d-flex flex-column ml-3" for="DHLTransposrt">
+                    <span class="mb-2 font-bold">DHL貨運</span>
+                    <span>48小時內送到</span>
+                  </label>
+                </div>
+                <span class="form__transport__cost" id="transport__DHL">$500</span>
+              </div>
+            </div>
+            <div class="part d-none">
+              <h2 class="content__title">付款資訊</h2>
+              <div class="form-row">
+                <div class="form__credit__container d-flex flex-column">
+                  <label class="form__label" for="form__credit">持卡人姓名</label>
+                  <input type="text" name="form__credit" id="form__credit" placeholder="Double C" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form__creditNum__container d-flex flex-column">
+                  <label class="form__label" for="form__creditNum">卡號</label>
+                  <input
+                    type="tel"
+                    inputmode="numeric"
+                    pattern="[0-9\s]{13,19}"
+                    autocomplete="cc-number"
+                    maxlength="19"
+                    placeholder="1111 2222 3333 4444"
+                    required
+                    id="form__creditNum"
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form__expiration__container d-flex flex-column">
+                  <label class="form__label" for="form__expiration">有效期限</label>
+                  <input
+                    type="text"
+                    name="form__expiration"
+                    id="form__expiration"
+                    placeholder="MM/YY"
+                    maxlength="5"
+                    required
+                  />
+                </div>
+                <div class="form__cvc__container d-flex flex-column">
+                  <label class="form__label" for="form__cvc">CVC/CCV</label>
+                  <input type="tel" name="form__cvc" id="form__cvc" maxlength="3" placeholder="123" required />
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="btn-container d-flex justify-content-end" id="btn-control">
+            <button class="btn btn-secondary align-items-center d-none justify-content-start" type="button" id="preBtn">
+              上一步
+            </button>
+            <button class="btn btn-primary d-flex align-items-center justify-content-center" type="submit" id="nextBtn">
+              下一步
+            </button>
+          </div>
         </div>
 
         <div class="rightContent"></div>
       </div>
     </section>
+
     <footer>
       <div class="container">
         <a class="footer__logo d-flex align-items-center" href=""

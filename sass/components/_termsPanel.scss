@@ -1,0 +1,145 @@
+.btn-container {
+  margin-top: 24px;
+  border-top: 1px solid #e6e6eb;
+  padding-top: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  margin-top: 24px;
+
+  .form__title__container,
+  .form__city__container {
+    grid-column: 1 / 3;
+  }
+
+  .form__name__container,
+  .form__address__container {
+    grid-column: 3 / 7;
+  }
+
+  .form__phone__container,
+  .form__expiration__container {
+    grid-column: 1 / 4;
+  }
+
+  .form__email__container,
+  .form__cvc__container {
+    grid-column: 4 / 7;
+  }
+
+  .form__credit__container,
+  .form__creditNum__container {
+    grid-column: 1 / 7;
+  }
+
+  input,
+  select {
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+    padding: 12px 18px;
+  }
+
+  @include pad {
+    .form__city__container {
+      grid-column: 1 / 13;
+    }
+
+    .form__address__container {
+      grid-column: 1 / 13;
+    }
+
+    .form__phone__container,
+    .form__email__container {
+      grid-column: 1 / 13;
+    }
+
+    .form__expiration__container {
+      grid-column: 1 / 4;
+    }
+
+    .form__cvc__container {
+      grid-column: 4 / 7;
+    }
+
+    .form__credit__container,
+    .form__creditNum__container {
+      grid-column: 1 / 7;
+    }
+  }
+
+  @include mobile {
+    .form__title__container,
+    .form__city__container {
+      grid-column: 1 / 3;
+    }
+
+    .form__name__container,
+    .form__address__container {
+      grid-column: 3 / 7;
+    }
+
+    .form__phone__container,
+    .form__expiration__container {
+      grid-column: 1 / 4;
+    }
+
+    .form__email__container,
+    .form__cvc__container {
+      grid-column: 4 / 7;
+    }
+
+    .form__credit__container,
+    .form__creditNum__container {
+      grid-column: 1 / 7;
+    }
+  }
+}
+
+.form__label {
+  margin-bottom: 8px;
+  color: #808080;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.form-container {
+  margin-bottom: 48px;
+}
+
+.form__transport {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  margin-top: 24px;
+
+  padding: 11px 20px;
+
+  .form-check-input {
+    height: 100%;
+    margin: 0;
+  }
+}
+
+.select-wrapper {
+  // border: 1px solid red;
+  position: relative;
+  z-index: 0;
+
+  &::after {
+    content: '';
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: gray transparent transparent transparent;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%); // 以自己 y-軸的高度，移動 -50%
+    z-index: -1;
+  }
+}
+
+.border-focus {
+  border: 1px solid #000;
+}

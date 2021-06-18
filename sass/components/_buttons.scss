@@ -1,0 +1,47 @@
+.btn {
+  width: 174px;
+  height: 46px;
+  border: 0px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background-color: #f67599;
+  color: white;
+
+  &:hover {
+    background-color: #eb6188;
+  }
+}
+
+.btn-secondary {
+  background-color: white;
+  color: black;
+}
+
+input {
+  &[type='radio'] {
+    -webkit-appearance: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(#000, 0.5);
+
+    &:checked {
+      box-shadow: inset 0 0 0 5px black;
+    }
+  }
+}
+
+select {
+  appearance: none;
+  cursor: pointer;
+  background-color: transparent;
+
+  &:invalid {
+    color: #747474;
+  }
+}

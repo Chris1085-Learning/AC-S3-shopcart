@@ -1,6 +1,15 @@
 .btn-container {
+  margin-top: 24px;
   border-top: 1px solid #e6e6eb;
   padding-top: 24px;
+
+  @include pad {
+    position: absolute;
+    left: 16px;
+    bottom: 0px;
+    width: calc(100% - 32px);
+    // padding: 16px;
+  }
 }
 
 .form-row {

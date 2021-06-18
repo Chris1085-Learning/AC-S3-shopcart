@@ -10,10 +10,14 @@
 
   @include pad {
     margin-top: 16px;
+    margin-bottom: 100px;
+    position: relative;
   }
 
   @include mobile {
     margin-top: 16px;
+    margin-bottom: 144px;
+    position: relative;
   }
 }
 

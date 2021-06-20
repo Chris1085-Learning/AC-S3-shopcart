@@ -988,10 +988,17 @@ header {
 }
 
 .open {
-  margin-bottom: 399px;
+  margin-bottom: 0px;
+}
+
+.close {
+  margin-bottom: 0px;
 }
 
 @media all and (min-width: 376px) and (max-width: 1319px) {
+  .open {
+    margin-bottom: 399px;
+  }
   header {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -1104,6 +1111,9 @@ header {
 }
 
 @media all and (max-width: 375px) {
+  .open {
+    margin-bottom: 399px;
+  }
   header {
     padding-top: 18px;
     padding-bottom: 18px;

@@ -1,6 +1,6 @@
 .content {
-  margin-top: 80px;
-  padding-bottom: 120px;
+  padding-top: 80px;
+  padding-bottom: 140px;
 
   .container {
     display: grid;
@@ -9,15 +9,17 @@
   }
 
   @include pad {
-    margin-top: 16px;
-    margin-bottom: 100px;
+    padding-top: 16px;
     position: relative;
   }
 
   @include mobile {
-    margin-top: 16px;
-    margin-bottom: 144px;
+    padding-top: 16px;
     position: relative;
+  }
+
+  @include theme() {
+    background-color: theme-get('content-bg-color');
   }
 }
 
@@ -33,6 +35,10 @@
 
   @include mobile {
     margin-top: 24px;
+  }
+
+  @include theme() {
+    color: theme-get('text-color');
   }
 }
 
@@ -52,6 +58,17 @@
   grid-column: 8 / 13;
   padding: 32px 24px 32px 24px;
   border: 1px solid #f0f0f5;
+
+  @include theme() {
+    border: 1px solid theme-get('rightContent-border-color');
+    background-color: theme-get('rightContent-bg-color');
+  }
+
+  h3 {
+    @include theme() {
+      color: theme-get('text-color');
+    }
+  }
 
   @include pad {
     grid-column: 1 / 13;

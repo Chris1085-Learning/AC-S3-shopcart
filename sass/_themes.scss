@@ -3,13 +3,21 @@ $themes: (
     'text-color': white,
     'footer-bg-color': #424242,
     'header-bg-color': black,
+    'content-bg-color': black,
     'border-color': white,
-    'hover-color': rgb(24, 24, 24)
+    'hover-color': rgb(24, 24, 24),
+    'text-gray-color': #333333,
+    'rightContent-bg-color': #424242,
+    'rightContent-border-color': #333333,
+    'border-top-color': #ffffff33
   ),
   lightTheme: (
     'text-color': black,
     'footer-bg-color': #f5f5f5,
-    'header-bg-color': white
+    'header-bg-color': white,
+    'content-bg-color': white,
+    'rightContent-border-color': #f0f0f5,
+    'border-top-color': #e6e6eb
   )
 );
 

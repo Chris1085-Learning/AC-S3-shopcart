@@ -51,6 +51,11 @@
   @include mobile {
     width: 100%;
   }
+
+  @include theme() {
+    background-color: theme-get('content-bg-color');
+    color: theme-get('text-color');
+  }
 }
 
 input {
@@ -62,8 +67,18 @@ input {
     height: 20px;
     border: 1px solid rgba(#000, 0.5);
 
+    @include theme() {
+      background-color: theme-get('text-gray-color');
+    }
+
     &:checked {
       box-shadow: inset 0 0 0 5px black;
+
+      @include theme() {
+        box-shadow: inset 0 0 0 5px theme-get('text-gray-color');
+        background-color: theme-get('text-color');
+        border: 1px solid theme-get('text-gray-color');
+      }
     }
   }
 }

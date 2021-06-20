@@ -46,6 +46,8 @@ menuToggle.addEventListener('click', () => {
 radioBtnStandard.addEventListener('click', () => {
   shippingPrice.textContent = '免運'
   calcTotalPrice()
+
+  // console.log(document.documentElement.classList)
 })
 
 DHLBtnStandard.addEventListener('click', () => {
@@ -84,11 +86,16 @@ function setBtnDisabled() {
 
     btnControl.classList.add('justify-content-end')
     btnControl.classList.remove('justify-content-between')
+
+    document.querySelectorAll('.connectLine')[1].classList.remove('connect-active')
   } else {
     prevBtn.classList.add('d-flex')
     prevBtn.classList.remove('d-none')
     btnControl.classList.remove('justify-content-end')
     btnControl.classList.add('justify-content-between')
+
+    document.querySelectorAll('.connectLine')[1].classList.add('connect-active')
+    document.querySelectorAll('.connectLine')[0].classList.add('connect-active')
   }
 
   if (step === 2) {

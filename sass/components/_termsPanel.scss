@@ -3,12 +3,22 @@
   border-top: 1px solid #e6e6eb;
   padding-top: 24px;
 
+  @include theme() {
+    border-top: 1px solid theme-get('border-top-color');
+  }
+
   @include pad {
     position: absolute;
     left: 16px;
-    bottom: 0px;
+    bottom: 40px;
     width: calc(100% - 32px);
-    // padding: 16px;
+  }
+
+  @include mobile {
+    position: absolute;
+    left: 16px;
+    bottom: 40px;
+    width: calc(100% - 32px);
   }
 }
 
@@ -48,6 +58,19 @@
     border: 1px solid #4a4a4a;
     border-radius: 4px;
     padding: 12px 18px;
+  }
+
+  input {
+    @include theme() {
+      background-color: theme-get('content-bg-color');
+      color: theme-get('text-color');
+    }
+  }
+
+  select {
+    @include theme() {
+      color: theme-get('text-color');
+    }
   }
 
   @include pad {
@@ -106,6 +129,21 @@
     }
   }
 }
+.form-check-label span:nth-child(1) {
+  @include theme() {
+    color: theme-get('text-color');
+  }
+}
+.form-check-label span:nth-child(2) {
+  @include theme() {
+    color: theme-get('text-gray-color');
+  }
+}
+.form__transport__cost {
+  @include theme() {
+    color: theme-get('text-color');
+  }
+}
 
 .form__label {
   margin-bottom: 8px;
@@ -116,6 +154,17 @@
 
 .form-container {
   margin-bottom: 48px;
+  // min-height: 288px;
+
+  @include pad {
+    min-height: 448px;
+    margin-bottom: 32px;
+  }
+
+  @include mobile {
+    min-height: 448px;
+    margin-bottom: 32px;
+  }
 }
 
 .form__transport {
@@ -147,4 +196,8 @@
     transform: translateY(-50%); // 以自己 y-軸的高度，移動 -50%
     z-index: -1;
   }
+}
+
+.border-white {
+  border: 1px solid white;
 }

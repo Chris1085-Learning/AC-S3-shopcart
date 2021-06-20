@@ -154,15 +154,12 @@
 
 .form-container {
   margin-bottom: 48px;
-  // min-height: 288px;
 
   @include pad {
-    min-height: 448px;
     margin-bottom: 32px;
   }
 
   @include mobile {
-    min-height: 448px;
     margin-bottom: 32px;
   }
 }

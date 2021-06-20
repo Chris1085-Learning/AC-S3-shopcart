@@ -1662,14 +1662,12 @@ footer .container {
 
 @media all and (min-width: 376px) and (max-width: 1319px) {
   .form-container {
-    min-height: 448px;
     margin-bottom: 32px;
   }
 }
 
 @media all and (max-width: 375px) {
   .form-container {
-    min-height: 448px;
     margin-bottom: 32px;
   }
 }
@@ -1932,16 +1930,16 @@ input[type='radio']:checked {
 }
 
 .darkTheme input[type='radio']:checked {
-  -webkit-box-shadow: inset 0 0 0 5px #333333;
-          box-shadow: inset 0 0 0 5px #333333;
+  -webkit-box-shadow: inset 0 0 0 5px black;
+          box-shadow: inset 0 0 0 5px black;
   background-color: white;
   border: 1px solid #333333;
 }
 
 .lightTheme input[type='radio']:checked {
-  -webkit-box-shadow: inset 0 0 0 5px;
-          box-shadow: inset 0 0 0 5px;
-  background-color: black;
+  -webkit-box-shadow: inset 0 0 0 5px black;
+          box-shadow: inset 0 0 0 5px black;
+  background-color: white;
   border: 1px solid;
 }
 

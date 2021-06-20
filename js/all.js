@@ -47,12 +47,22 @@ radioBtnStandard.addEventListener('click', () => {
   shippingPrice.textContent = '免運'
   calcTotalPrice()
 
-  // console.log(document.documentElement.classList)
+  const theme = document.documentElement.classList[0]
+  if (theme === 'darkTheme') {
+    radioBtnStandard.parentNode.parentNode.classList.add('border-white')
+    DHLBtnStandard.parentNode.parentNode.classList.remove('border-white')
+  }
 })
 
 DHLBtnStandard.addEventListener('click', () => {
   shippingPrice.textContent = '$' + 500
   calcTotalPrice()
+
+  const theme = document.documentElement.classList[0]
+  if (theme === 'darkTheme') {
+    DHLBtnStandard.parentNode.parentNode.classList.add('border-white')
+    radioBtnStandard.parentNode.parentNode.classList.remove('border-white')
+  }
 })
 
 /* Step handler function section*/

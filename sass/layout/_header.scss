@@ -80,10 +80,18 @@ header {
 }
 
 .open {
-  margin-bottom: 399px;
+  margin-bottom: 0px;
+}
+
+.close {
+  margin-bottom: 0px;
 }
 
 @include pad {
+  .open {
+    margin-bottom: 399px;
+  }
+
   header {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -191,6 +199,10 @@ header {
 }
 
 @include mobile {
+  .open {
+    margin-bottom: 399px;
+  }
+
   header {
     padding-top: 18px;
     padding-bottom: 18px;

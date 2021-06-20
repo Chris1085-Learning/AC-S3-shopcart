@@ -1,6 +1,29 @@
-// dark mode
 // target the switch element
 const darkModeToggle = document.getElementById('darkModeToggle')
+/* radio button */
+const radioBtnStandard = document.getElementById('standardTransposrt')
+const DHLBtnStandard = document.getElementById('DHLTransposrt')
+/* Step Btn*/
+const stepControl = document.getElementById('step-control')
+const steps = stepControl.querySelectorAll('.step')
+const form = document.getElementById('checkout-form')
+const formParts = form.querySelectorAll('.part')
+const btnControl = document.getElementById('btn-control')
+const nextBtn = btnControl.querySelector('.btn-primary')
+const prevBtn = btnControl.querySelector('.btn-secondary')
+let step = 0
+/* Count Price Section */
+const minusButton = document.querySelectorAll('.minus')
+const plusButton = document.querySelectorAll('.plus')
+const itemsPrice = document.querySelectorAll('.item__price')
+const totalCost = document.getElementById('total-cost')
+const shippingPrice = document.getElementById('shipping-price')
+const productPrice = {
+  破壞補丁修身牛仔褲: 3999,
+  刷色直筒牛仔褲: 1299
+}
+
+/* dark mode section */
 // toggle handler
 const darkModeToggleHandler = (event) => {
   document.documentElement.classList.toggle('lightTheme')
@@ -11,6 +34,7 @@ const darkModeToggleHandler = (event) => {
 // bind the event
 darkModeToggle.addEventListener('click', darkModeToggleHandler)
 
+/* header section */
 // toggle menu will add 'open' class that adding margin-bottom in header
 const header = document.getElementById('header')
 const menuToggle = document.getElementById('hamburger__toggle')
@@ -18,33 +42,18 @@ menuToggle.addEventListener('click', () => {
   header.classList.toggle('open')
 })
 
-const radioBtnStandard = document.getElementById('standardTransposrt')
-const DHLBtnStandard = document.getElementById('DHLTransposrt')
-const standardContainer = document.getElementsByClassName('form__transport')[0]
-const DHLContainer = document.getElementsByClassName('form__transport')[1]
-
+/* radio button */
 radioBtnStandard.addEventListener('click', () => {
-  standardContainer.classList.add('border-focus')
-  DHLContainer.classList.remove('border-focus')
+  shippingPrice.textContent = '免運'
+  calcTotalPrice()
 })
 
 DHLBtnStandard.addEventListener('click', () => {
-  DHLContainer.classList.add('border-focus')
-  standardContainer.classList.remove('border-focus')
+  shippingPrice.textContent = '$' + 500
+  calcTotalPrice()
 })
 
-const stepControl = document.getElementById('step-control')
-const steps = stepControl.querySelectorAll('.step')
-const form = document.getElementById('checkout-form')
-const formParts = form.querySelectorAll('.part')
-const btnControl = document.getElementById('btn-control')
-const nextBtn = btnControl.querySelector('.btn-primary')
-const prevBtn = btnControl.querySelector('.btn-secondary')
-const nextBtnIcon = `<i class="ml-4 fal fa-long-arrow-right fa-lg"></i>`
-const preBtnIcon = `<i class="ml-4 fal fa-long-arrow-right fa-lg"></i>`
-
-let step = 0
-
+/* Step handler function section*/
 function handleBtnControlClicked(e) {
   e.preventDefault()
   const nowStep = steps[step]
@@ -90,3 +99,54 @@ function setBtnDisabled() {
 }
 
 btnControl.addEventListener('click', handleBtnControlClicked)
+
+minusButton.forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    const countLabel = btn.nextElementSibling
+    let count = parseInt(countLabel.innerHTML)
+    const product = btn.parentNode.previousElementSibling.innerHTML
+    const productSumLabel = btn.parentNode.parentNode.nextElementSibling
+
+    // 計算price並轉為有comma的數字字串
+    price = count > 0 ? (productPrice[product] * (count - 1)).toLocaleString() : 0
+    // 重新計算itam count, price
+    countLabel.textContent = count > 0 ? --count : 0
+    productSumLabel.textContent = '$' + price
+
+    // 重新計算total price
+    calcTotalPrice()
+  })
+})
+
+plusButton.forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    const countLabel = btn.previousElementSibling
+    let count = parseInt(countLabel.innerHTML)
+    const product = btn.parentNode.previousElementSibling.innerHTML
+    const productSumLabel = btn.parentNode.parentNode.nextElementSibling
+
+    // 計算price並轉為有comma的數字字串
+    price = (productPrice[product] * (count + 1)).toLocaleString()
+    // 重新計算itam count, price
+    countLabel.textContent = ++count
+    productSumLabel.textContent = '$' + price
+
+    // 重新計算total price
+    calcTotalPrice()
+  })
+})
+
+function calcTotalPrice() {
+  // 計算運費
+  const shippingPriceCalc = shippingPrice.innerHTML === '$500' ? 500 : 0
+
+  let totalPrice = 0
+  itemsPrice.forEach((el) => {
+    // 從數字字串轉為數字
+    const price = parseInt(el.innerHTML.split('$')[1].replace(/,/g, ''))
+    totalPrice += price
+  })
+
+  totalPrice = '$' + parseInt(totalPrice + shippingPriceCalc).toLocaleString()
+  totalCost.textContent = totalPrice
+}

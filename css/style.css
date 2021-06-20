@@ -1595,10 +1595,6 @@ footer .container {
   z-index: -1;
 }
 
-.border-focus {
-  border: 1px solid #000;
-}
-
 .cart__item {
   margin-top: 34px;
 }

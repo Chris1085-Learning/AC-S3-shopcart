@@ -16,3 +16,4 @@ git clone https://github.com/chris1085/AC-S3-shopcart.git
 * Normal and Dark Mode
 * Checkbox customization
 * Header and Footer RWD
+* Calculation of item price

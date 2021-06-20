@@ -1522,25 +1522,27 @@ footer .container {
 }
 
 @media all and (max-width: 375px) {
-  .form-row .form__title__container,
   .form-row .form__city__container {
     -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
-    grid-column: 1 / 3;
+    -ms-grid-column-span: 12;
+    grid-column: 1 / 13;
   }
-  .form-row .form__name__container,
   .form-row .form__address__container {
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 4;
-    grid-column: 3 / 7;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-column: 1 / 13;
   }
   .form-row .form__phone__container,
+  .form-row .form__email__container {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-column: 1 / 13;
+  }
   .form-row .form__expiration__container {
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
     grid-column: 1 / 4;
   }
-  .form-row .form__email__container,
   .form-row .form__cvc__container {
     -ms-grid-column: 4;
     -ms-grid-column-span: 3;
@@ -1743,6 +1745,8 @@ footer .container {
 @media all and (max-width: 375px) {
   .btn-primary {
     width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 
